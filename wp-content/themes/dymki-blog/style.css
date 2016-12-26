@@ -1,0 +1,36 @@
+/**
+ * Theme Name: Dymki Blog
+ * Theme URI: http://anna.dymki.by/
+ * Author: Dmitry Rendov
+ * Author URI: http://demon.of.by/
+ * Template: metro-magazine
+ * Description: Site dymki.by cheild theme based on Metro Magazine theme
+ * Version: 0.1.0
+ */
+@import url("../metro-magazine/style.css");
+
+/************** Global **************/
+@import url(http://fonts.googleapis.com/css?family=Scada:200,300,400,500,600,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:200,300,400,500,600,700&subset=latin,cyrillic);
+
+body, input, textarea {
+  font-family: 'PT Sans', Helvetica, Arial, Geneva, sans-serif;
+}
+
+p {
+  font-family: 'PT Sans', Helvetica, Arial, Geneva, sans-serif;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  font-family: 'Scada', Helvetica, Arial, Geneva, sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  color: #f36700;
+}
+
+strong {
+  font-weight: bold;
+}
