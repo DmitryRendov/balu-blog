@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-11-30 12:11+0000\n"
+"POT-Creation-Date: 2017-03-14 10:12+0000\n"
 "POT-Revision-Date: Thu Jun 02 2016 14:43:30 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: inc/extras.php:145
 #, php-format
-msgid "<b class=\"fn\"><a href=\"<?php get_the_author(); ?>\">%s</a></b>"
+msgid "<b class=\"fn\">%s</b>"
 msgstr ""
 
 #: inc/extras.php:148
@@ -170,53 +170,12 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: inc/extras.php:401
+#: inc/extras.php:402
 msgid "Comment"
 msgstr ""
 
-#: inc/extras.php:403
+#: inc/extras.php:404
 msgid "Submit"
-msgstr ""
-
-#: inc/info.php:11
-msgid "Information Links"
-msgstr ""
-
-#: inc/info.php:21
-msgid "Need help?"
-msgstr ""
-
-#: inc/info.php:22
-msgid "View demo"
-msgstr ""
-
-#: inc/info.php:22 inc/info.php:23 inc/info.php:24 inc/info.php:25
-#: inc/info.php:26 inc/info.php:27
-msgid "here"
-msgstr ""
-
-#: inc/info.php:23
-msgid "View documentation"
-msgstr ""
-
-#: inc/info.php:24
-msgid "Theme info"
-msgstr ""
-
-#: inc/info.php:25
-msgid "Support ticket"
-msgstr ""
-
-#: inc/info.php:26
-msgid "Rate this theme"
-msgstr ""
-
-#: inc/info.php:27
-msgid "More Details"
-msgstr ""
-
-#: inc/info.php:31
-msgid "About Travel Diaries"
 msgstr ""
 
 #. $id
@@ -242,6 +201,10 @@ msgstr ""
 
 #: inc/template-functions.php:628
 msgid "Latest Posts"
+msgstr ""
+
+#: inc/template-functions.php:654
+msgid "View Detail"
 msgstr ""
 
 #: inc/template-functions.php:664
@@ -406,15 +369,15 @@ msgstr ""
 msgid "Color Scheme"
 msgstr ""
 
-#: inc/customizer/custom.php:14
+#: inc/customizer/custom.php:16
 msgid "Custom CSS Settings"
 msgstr ""
 
-#: inc/customizer/custom.php:32
+#: inc/customizer/custom.php:34
 msgid "Custom Css"
 msgstr ""
 
-#: inc/customizer/custom.php:34
+#: inc/customizer/custom.php:36
 msgid "Put your custom CSS"
 msgstr ""
 
@@ -516,6 +479,62 @@ msgstr ""
 
 #: inc/customizer/home.php:443
 msgid "Select Category Five"
+msgstr ""
+
+#: inc/customizer/home.php:445
+msgid ""
+"If this category five has not been selected then latest posts will be "
+"displayed"
+msgstr ""
+
+#: inc/customizer/info.php:11
+msgid "Information Links"
+msgstr ""
+
+#: inc/customizer/info.php:21
+msgid "Need help?"
+msgstr ""
+
+#: inc/customizer/info.php:22
+msgid "View demo"
+msgstr ""
+
+#: inc/customizer/info.php:22 inc/customizer/info.php:23
+#: inc/customizer/info.php:24 inc/customizer/info.php:25
+#: inc/customizer/info.php:26 inc/customizer/info.php:27
+msgid "here"
+msgstr ""
+
+#: inc/customizer/info.php:23
+msgid "View documentation"
+msgstr ""
+
+#: inc/customizer/info.php:24
+msgid "Theme info"
+msgstr ""
+
+#: inc/customizer/info.php:25
+msgid "Support ticket"
+msgstr ""
+
+#: inc/customizer/info.php:26
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/customizer/info.php:27
+msgid "More WordPress Themes"
+msgstr ""
+
+#: inc/customizer/info.php:31
+msgid "About Metro Magazine"
+msgstr ""
+
+#: inc/customizer/info.php:149
+msgid "Pro Available"
+msgstr ""
+
+#: inc/customizer/info.php:151
+msgid "VIEW PRO THEME"
 msgstr ""
 
 #: inc/customizer/social.php:14

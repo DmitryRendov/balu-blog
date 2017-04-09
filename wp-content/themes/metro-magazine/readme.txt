@@ -5,8 +5,8 @@ Author: Rara Theme (http://raratheme.com)
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, news, entertainment, custom-colors
 
 Requires at least: 4.6
-Tested up to: 4.6.1
-Stable tag: 1.0.6
+Tested up to: 4.7.3
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,20 @@ Metro Magazine WordPress Theme is distributed under the terms of the GPLv2 or la
    GNU General Public License for more details.
    
 == Change Log ==
+
+1.0.9
+* Fixed found bugs.
+
+1.0.8
+* Fixed found bugs.
+* Responsive menu fixed.
+* Default Color Scheme Fixed.
+* Comment Form Fixed.
+
+1.0.7
+* Migrated Custom CSS code to Core Additional CSS for WP ver > 4.7.
+* Added Pro link in customizer.
+
 1.0.6
 * Bug in Color Scheme option fixed.
 * Information Links section is added.

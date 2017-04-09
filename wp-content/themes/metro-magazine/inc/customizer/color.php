@@ -20,7 +20,7 @@ function metro_magazine_customize_register_color_scheme( $wp_customize ) {
       
     $wp_customize->add_setting( 'metro_magazine_color_scheme', 
         array(
-        'default'           => '#bfbfbf',
+        'default'           => '#386FA7',
         'sanitize_callback' => 'sanitize_hex_color'
         )
     );

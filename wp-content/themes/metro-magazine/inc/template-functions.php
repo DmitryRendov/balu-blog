@@ -651,7 +651,7 @@ function metro_magazine_more_news_content(){
             								<?php metro_magazine_colored_category(); ?>
             							</div>
             							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                						<div class="btn-detail"><a href="<?php the_permalink(); ?>"><span class="fa fa-plus-circle"></span> View Detail</a></div>
+                						<div class="btn-detail"><a href="<?php the_permalink(); ?>"><span class="fa fa-plus-circle"></span> <?php esc_html_e( 'View Detail','metro-magazine' ); ?></a></div>
                 					</div> 
                                 </div>
                                 <?php

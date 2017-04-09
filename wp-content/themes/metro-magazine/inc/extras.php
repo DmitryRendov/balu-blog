@@ -116,9 +116,9 @@ function metro_magazine_categorized_blog() {
 
 
 /**
- * Callback function for Comment List *
+ * Callback function for metro_magazine List *
  * 
- * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
+ * @link https://codex.wordpress.org/Function_Reference/wp_list_metro_magazines 
  */
  
  function metro_magazine_comment($comment, $args, $depth) {
@@ -142,7 +142,7 @@ function metro_magazine_categorized_blog() {
     
         <div class="comment-author vcard">
     	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    	<?php printf( __( '<b class="fn"><a href="<?php get_the_author(); ?>">%s</a></b>', 'metro-magazine' ), get_comment_author_link() ); ?>
+    	<?php printf( __( '<b class="fn">%s</b>', 'metro-magazine' ), get_comment_author_link() ); ?>
     	</div>
     	<?php if ( $comment->comment_approved == '0' ) : ?>
     		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'metro-magazine' ); ?></em>
@@ -381,14 +381,15 @@ function metro_magazine_change_comment_form_default_fields( $fields ){
     // Change just the author field
     $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'metro-magazine' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
     
-    $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'metro-magazine' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'metro-magazine' ) . '" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
     
-    $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'metro-magazine' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
+    $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'metro-magazine' ) . '" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
     
     return $fields;
     
 }
 endif;
+add_filter( 'comment_form_default_fields', 'metro_magazine_change_comment_form_default_fields' );
 
 if( ! function_exists( 'metro_magazine_change_comment_form_defaults' ) ) :
 /**
@@ -406,4 +407,4 @@ function metro_magazine_change_comment_form_defaults( $defaults ){
     
 }
 endif;
-  
+add_filter( 'comment_form_defaults', 'metro_magazine_change_comment_form_defaults' );

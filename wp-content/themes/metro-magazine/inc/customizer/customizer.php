@@ -5,7 +5,7 @@
  * @package Metro_Magazine
  */
 
-    $metro_magazine_settings = array( 'default', 'home', 'ads', 'breadcrumb', 'catcolor', 'color', 'custom', 'social' );
+    $metro_magazine_settings = array( 'default', 'home', 'ads', 'breadcrumb', 'catcolor', 'color', 'custom', 'social', 'info' );
 
     /* Option list of all post */	
     $metro_magazine_options_posts = array();
@@ -48,4 +48,11 @@ function metro_magazine_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'metro_magazine_customize_preview_js' );
 
-
+/**
+ * Enqueue Scripts for customize controls
+*/
+function metro_magazine_customize_scripts() {
+	wp_enqueue_style( 'metro_magazine-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+    wp_enqueue_script( 'metro_magazine-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'metro_magazine_customize_scripts' );

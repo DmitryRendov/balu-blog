@@ -5,7 +5,7 @@
 
 function metro_magazine_dynamic_css(){
     
-    $color_scheme = get_theme_mod( 'metro_magazine_color_scheme', '#bfbfbf' );
+    $color_scheme = get_theme_mod( 'metro_magazine_color_scheme', '#386FA7' );
     
     echo "<style type='text/css' media='all'>"; ?>
     
@@ -98,6 +98,50 @@ function metro_magazine_dynamic_css(){
     .widget.widget_tag_cloud a:hover,
     .widget.widget_tag_cloud a:focus{
         background: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    .site-header .header-t,
+    .secondary-menu ul ul{
+        background: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    .comments-area .comment-body .reply a:hover,
+    .comments-area .comment-body .reply a:focus{
+        background: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+        border-color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"]{
+        border-color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+        color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    button:hover,
+    input[type="button"]:hover,
+    input[type="reset"]:hover,
+    input[type="submit"]:hover,
+    button:focus,
+    input[type="button"]:focus,
+    input[type="reset"]:focus,
+    input[type="submit"]:focus{
+        background: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+        border-color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    .widget.widget_calendar table tbody td a{
+        background: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    .search #primary .post .entry-header .entry-link,
+    .search #primary .page .entry-header .entry-link{
+        color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
+    }
+
+    .error404 .error-holder h1{
+        color: <?php echo metro_magazine_sanitize_hex_color( $color_scheme ); ?>;
     }
     
     

@@ -1,14 +1,36 @@
 jQuery(document).ready(function($){
 
-    	$('#responsive-menu-button').sidr({
-    		  name: 'sidr-main',
-    		  source: '#site-navigation'
-    	});
+    	// $('#responsive-menu-button').sidr({
+    	// 	  name: 'sidr-main',
+    	// 	  source: '#site-navigation',
+     //          side: 'right'
+    	// });
 
-        $('#secondary-responsive-menu-button').sidr({
-            name: 'responsive-sidr-main',
-            source: '.secondary-menu'
+     //    $('#secondary-responsive-menu-button').sidr({
+     //        name: 'responsive-sidr-main',
+     //        source: '.secondary-menu',
+     //        side: 'right'
+     //    });
+
+     
+        $('#site-navigation').slicknav({
+            label: "MENU", 
+            prependTo:'.nav-content'
         });
+
+        $('.secondary-menu').slicknav({
+            label: '', 
+            prependTo:'.header-t'
+        });
+
+        /* Equal Height */
+        $('.section-two.top-news .post').matchHeight({
+            byRow: true,
+            property: 'height',
+            target: null,
+            remove: false
+        });
+
     
         // Get the modal
         var modal = document.getElementById('formModal');
@@ -22,17 +44,19 @@ jQuery(document).ready(function($){
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
             modal.style.display = "block";
-        }
+        };
         
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = "none";
-        }
+        };
         
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        } 
+        };
+
+
 });

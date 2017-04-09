@@ -63,8 +63,3 @@ require get_template_directory() . '/inc/widgets/widgets.php';
  * Dynamic Styles
  */
 require get_template_directory() . '/css/style.php';
-
-/**
- * Theme Info
- */
-require get_template_directory() . '/inc/info.php';

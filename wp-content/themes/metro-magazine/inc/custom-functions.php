@@ -103,18 +103,6 @@ function metro_magazine_setup() {
     
 }
 endif;
-add_action( 'after_setup_theme', 'metro_magazine_setup' );
-
-
-if ( is_admin() ) : // Load only if we are viewing an admin page
-function spa_and_salon_admin_scripts() {
-	wp_enqueue_style( 'metro_magazine-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );
-    
-    wp_enqueue_script( 'metro_magazine-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );    
-	
-}
-add_action( 'admin_enqueue_scripts', 'spa_and_salon_admin_scripts' );
-endif;
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -126,7 +114,6 @@ endif;
 function metro_magazine_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'metro_magazine_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'metro_magazine_content_width', 0 );
 
 /**
 * Adjust content_width value according to template.
@@ -134,7 +121,6 @@ add_action( 'after_setup_theme', 'metro_magazine_content_width', 0 );
 * @return void
 */
 function metro_magazine_template_redirect_content_width() {
-
 	// Full Width in the absence of sidebar.
 	if( is_page() ){
 	   $sidebar_layout = metro_magazine_sidebar_layout();
@@ -143,9 +129,7 @@ function metro_magazine_template_redirect_content_width() {
 	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
 		$GLOBALS['content_width'] = 1170;
 	}
-
 }
-
 
 /**
  * Enqueue scripts and styles.
@@ -157,18 +141,21 @@ function metro_magazine_scripts() {
 	);
     
     wp_enqueue_style( 'metro-magazine-google-fonts', add_query_arg( $metro_magazine_query_args, "//fonts.googleapis.com/css" ) );
-    wp_enqueue_style( 'jquery.sidr.light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
+    wp_enqueue_style( 'jquery-sidr-light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
+	wp_enqueue_style( 'slicknav', get_template_directory_uri() . '/css/slicknav.css' );
     wp_enqueue_style( 'metro-magazine-style', get_stylesheet_uri(), METRO_MAGAZINE_THEME_VERSION );
 
-    wp_enqueue_script( 'jquery.sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
+
+    wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
+	wp_enqueue_script( 'jquery-slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js', array('jquery'), '1.0.10', true );
+    wp_enqueue_script( 'equal-height', get_template_directory_uri() . '/js/equal-height.js', array('jquery'), '0.7.0', true );
     wp_enqueue_script( 'metro-magazine-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), METRO_MAGAZINE_THEME_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'metro_magazine_scripts' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -221,9 +208,6 @@ function metro_magazine_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'metro_magazine_categories' );
 }
-add_action( 'edit_category', 'metro_magazine_category_transient_flusher' );
-add_action( 'save_post',     'metro_magazine_category_transient_flusher' );
-
 
 /** 
  * Hook to move comment text field to the bottom in WP 4.4 
@@ -244,7 +228,6 @@ if ( ! function_exists( 'metro_magazine_excerpt_more' ) && ! is_admin() ) :
 function metro_magazine_excerpt_more() {
 	return ' &hellip; ';
 }
-
 endif;
 
 if ( ! function_exists( 'metro_magazine_excerpt_length' ) ) :
@@ -259,12 +242,25 @@ endif;
 /**
  * Custom CSS
 */
-function metro_magazine_custom_css(){
-    $custom_css = get_theme_mod( 'metro_magazine_custom_css' );
-    if( ! empty( $custom_css ) ){
-		echo '<style type="text/css">';
-		echo wp_strip_all_tags( $custom_css );
-		echo '</style>';
-	}
+if ( function_exists( 'wp_update_custom_css_post' ) ) {
+    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+    $css = get_theme_mod( 'metro_magazine_custom_css' );
+    if ( $css ) {
+        $core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+        $return = wp_update_custom_css_post( $core_css . $css );
+        if ( ! is_wp_error( $return ) ) {
+            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+            remove_theme_mod( 'metro_magazine_custom_css' );
+        }
+    }
+} else {
+    function metro_magazine_custom_css(){
+        $custom_css = get_theme_mod( 'metro_magazine_custom_css' );
+        if( ! empty( $custom_css ) ){
+    		echo '<style type="text/css">';
+    		echo wp_strip_all_tags( $custom_css );
+    		echo '</style>';
+    	}
+    }
+    add_action( 'wp_head', 'metro_magazine_custom_css', 100 );
 }
-

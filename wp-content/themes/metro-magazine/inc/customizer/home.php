@@ -442,6 +442,7 @@ function metro_magazine_customize_register_home( $wp_customize ) {
         array(
             'label'   => __( 'Select Category Five', 'metro-magazine' ),
             'section' => 'metro_magazine_category_settings',
+			'description' => __( 'If this category five has not been selected then latest posts will be displayed', 'metro-magazine' ),
             'type'    => 'select',
             'choices' => $metro_magazine_option_categories,
         )

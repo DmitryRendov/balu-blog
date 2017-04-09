@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/metro-magazine/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Metro Magazine is a modern responsive magazine style WordPress theme suitable for news, newspaper, magazine, sports, technology, food, travel, blogs, publishing, business and any kind of sites. The theme is built on Customizer and it allows you to easily customize your website with live previews. Metro Magazine includes color scheme and color for categories, which you can use to change the look and feel of your website with a click. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, advertisement settings, custom CSS, translation ready and more. Check demo at https://raratheme.com/preview/metro-magazine/ and documentation at https://raratheme.com/documentation/metro-magazine. Read theme details at https://raratheme.com/wordpress-themes/metro-magazine and get free support at https://raratheme.com/support-ticket.
-Version: 1.0.6
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: metro-magazine
@@ -443,12 +443,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
-	border: 1px solid #ddd;
+	border: 1px solid #06509d;
 	border-radius: 20px;
 	font-size: 14px;
 	line-height: 17px;
 	text-transform: uppercase;
-	color: #919191;
+	color: #06509d;
 	letter-spacing: 1px;
 	padding: 9px 58px;
 	-webkit-transition: all 0.3s;
@@ -3025,7 +3025,6 @@ object {
 
 .widget.widget_calendar thead th{
 	font-size: 14px;
-	background: #fff;
 	color: #616161;
 	font-weight: 400;
 	height: 35px;
@@ -3275,6 +3274,10 @@ object {
 #mobile-header,
 #secondary-mobile-header{display: none;}
 
+.slicknav_menu {
+	display:none;
+}
+
 /*responsive style*/
 @media only screen and (max-width: 1199px){
 	.container{
@@ -3307,13 +3310,13 @@ object {
 		width: 100%;
 	}
 
-	#mobile-header,
+	/*#mobile-header,
 	#secondary-mobile-header{
 		display: block;
-		float: left;
+		float: right;
 		width: 20px;
 		margin-top: 19px;
-	}
+	}*/
 
 	.main-navigation,
 	.secondary-menu{display: none;}
@@ -3398,6 +3401,46 @@ object {
 	.all-post ul li.medium{width: 100%;}
 
 	.all-post ul li{width: 50%;}
+
+	.site-header .btn-search{
+		float: left;
+		margin-top: 9px;
+		margin-bottom: 6px;
+	}
+
+	/* #menu is the original menu */
+	/*.js #site-navigation {
+		display:none;
+	}*/
+	
+	.slicknav_menu {
+		display:block;
+	}
+
+	.slicknav_nav ul{margin: 0;}
+
+	.slicknav_nav a{
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.slicknav_nav a:hover,
+	.slicknav_nav a:focus{
+		text-decoration: none;
+	}
+
+	.slicknav_nav .slicknav_row {
+	    margin: 0 -5px;
+	    padding: 5px 10px;
+	}
+
+	.header-t .slicknav_menu{background: #386FA7;}
+
+	/*.secondary-nav li{
+		float: none;
+		display: block;
+		width: 100%;
+	}*/
 }
 
 @media only screen and (max-width: 767px){
@@ -3414,10 +3457,10 @@ object {
 		margin-bottom: 10px;
 		text-align: center;
 	}
-	.secondary-nav li{
+	/*.secondary-nav li{
 		float: none;
 		display: inline-block;
-	}
+	}*/
 
 	.section-two .col{
 		width: 100%;

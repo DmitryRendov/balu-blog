@@ -1,0 +1,62 @@
+body { color: #000000 }
+
+#primary .post .entry-footer .btn-readmore {
+    font-size: 13px;
+}
+
+#primary .post .entry-footer .btn-readmore .fa {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.section-four {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section-five {
+    display: none;
+}
+
+/*responsive style*/
+@media only screen and (max-width: 1199px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .section-four .text-holder .post-holder{
+    max-width: none;
+  } 
+}
+
+@media only screen and (max-width: 767px){
+
+}
+
+.section-four .img-holder {
+}
+
+.all-post .post .category-holder a, 
+.section-two .post .category-holder a,
+.section-five .post .category-holder a {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 7px 15px 8px;
+    color: #fff;
+    background: #386fa7;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    opacity: 0.8;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.all-post .post .category-holder a:hover, .section-five .post .category-holder a:hover, .section-two .post .category-holder a:hover,
+.all-post .post .category-holder a:focus, .section-five .post .category-holder a:focus, .section-two .post .category-holder a:focus{
+    text-decoration: none;
+    opacity: 0.5;
+    border-radius: 20px;
+}

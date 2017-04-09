@@ -5,13 +5,14 @@
  * Author URI: http://demon.of.by/
  * Template: metro-magazine
  * Description: Site dymki.by cheild theme based on Metro Magazine theme
- * Version: 0.1.0
+ * Version: 0.2.1
  */
-@import url("../metro-magazine/style.css");
 
 /************** Global **************/
 @import url(http://fonts.googleapis.com/css?family=Scada:200,300,400,500,600,700&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:200,300,400,500,600,700&subset=latin,cyrillic);
+@import url("../metro-magazine/style.css");
+@import url("custom.css");
 
 body, input, textarea {
   font-family: 'PT Sans', Helvetica, Arial, Geneva, sans-serif;
@@ -34,3 +35,9 @@ h2 {
 strong {
   font-weight: bold;
 }
+
+#primary .post .entry-content .highlight, #primary .page .entry-content .highlight {
+    background: #3873b1 none repeat scroll 0 0;
+    color: #f36700;
+}
+
